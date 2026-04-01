@@ -1,19 +1,18 @@
-import { StyleSheet, Text, View } from "react-native";
+import AuthProvider from '@/contexts/auth';
+import Routes from '@/routes';
+import { NavigationContainer, NavigationIndependentTree } from '@react-navigation/native';
+import { StatusBar } from 'react-native';
+import 'react-native-gesture-handler';
 
 export default function Index() {
   return (
-    <View
-      style={styles.container}
-    >
-      <Text>Teste</Text>
-    </View>
+    <NavigationIndependentTree>
+      <NavigationContainer>
+        <AuthProvider>
+          <StatusBar backgroundColor="#F0F4FF" barStyle="dark-content" />
+          <Routes />
+        </AuthProvider>
+      </NavigationContainer>
+    </NavigationIndependentTree>
   );
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    alignItems: "center",
-    justifyContent: "center",
-  },
-});
