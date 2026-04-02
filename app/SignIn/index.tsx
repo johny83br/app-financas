@@ -7,12 +7,12 @@ import {
   LinkText,
   Logo,
   SubmitButton,
-  SubmitText,
+  SubmitText
 } from '@/assets/styles';
 import { AuthContext } from '@/contexts/auth';
 import { useNavigation } from '@react-navigation/native';
 import React, { useContext, useState } from 'react';
-import { ActivityIndicator, Platform } from 'react-native';
+import { ActivityIndicator } from 'react-native';
 
 export default function SignIn() {
   const navigation = useNavigation();
@@ -28,7 +28,7 @@ export default function SignIn() {
 
   return (
     <Background>
-      <Container behavior={Platform.OS === 'ios' ? 'padding' : 'height'} enabled>
+      <Container behavior="padding" enabled>
         <Logo source={require('../../assets/images/Logo.png')} />
 
         <AreaInput>

@@ -1,6 +1,6 @@
 {
   "expo": {
-    "name": "financas",
+    "name": "Finanças",
     "slug": "financas",
     "version": "1.0.0",
     "orientation": "portrait",
@@ -18,9 +18,10 @@
         "backgroundImage": "./assets/images/android-icon-background.png",
         "monochromeImage": "./assets/images/android-icon-monochrome.png"
       },
+      "softwareKeyboardLayoutMode": "resize",
       "edgeToEdgeEnabled": true,
       "predictiveBackGestureEnabled": false,
-      "package": "com.anonymous.financas"
+      "package": "com.ninjadev.financas"
     },
     "web": {
       "output": "static",

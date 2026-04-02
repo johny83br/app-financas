@@ -7,7 +7,7 @@ import {
   SubmitText,
 } from '@/assets/styles';
 import React, { useContext, useState } from 'react';
-import { ActivityIndicator, Platform } from 'react-native';
+import { ActivityIndicator } from 'react-native';
 import { AuthContext } from '../../contexts/auth';
 
 export default function SignUp() {
@@ -25,7 +25,7 @@ export default function SignUp() {
 
   return (
     <Background>
-      <Container behavior={Platform.OS === 'ios' ? 'padding' : 'height'} enabled>
+      <Container behavior='padding' enabled>
         <AreaInput>
           <Input
             placeholder="Nome"
