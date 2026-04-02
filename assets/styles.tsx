@@ -70,12 +70,11 @@ export const ContainerHeader = styled(SafeAreaView)`
   align-items: center;
   width: 100%;
   padding: 0;
-  margin-left: 15px;
-  margin-bottom: 15px;
+  margin-left: 8px;
 `;
 
 export const TitleHeader = styled.Text`
-  font-size: 22px;
+  font-size: 20px;
   margin-left: 8px;
 `;
 

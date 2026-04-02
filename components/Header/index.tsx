@@ -14,7 +14,7 @@ export default function Header({ title }: { title: string }) {
           navigation.dispatch(DrawerActions.openDrawer());
         }}
       >
-        <Icon name="menu" size={35} color="#121212" />
+        <Icon name="menu" size={24} color="#121212" />
       </ButtonMenu>
 
       {title && <TitleHeader>{title}</TitleHeader>}
