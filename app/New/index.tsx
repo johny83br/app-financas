@@ -57,7 +57,7 @@ export default function New() {
   return(
     <TouchableWithoutFeedback onPress={() => Keyboard.dismiss()}>
       <Background>
-        <Header title="Registrando" />
+        <Header title="Registrar" />
 
         <SafeAreaView style={{ marginTop: 14, alignItems: 'center' }}>
           <Input
