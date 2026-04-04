@@ -82,3 +82,30 @@ export const ButtonMenu = styled.TouchableOpacity`
   justify-content: center;
   align-items: center;
 `;
+
+export const ListBalance = styled.FlatList`
+  max-height: 130px;
+`;
+
+export const ContainerBalanceItem = styled.View`
+  background-color: #${props => props.bg};
+  margin-left: 14px;
+  margin-right: 14px;
+  border-radius: 4px;
+  justify-content: center;
+  align-items: flex-start;
+  width: 300px;
+  padding-left: 14px;
+`;
+
+export const LabelBalanceItem = styled.Text`
+  font-size: 19px;
+  color: #fff;
+  font-weight: bold;
+`;
+
+export const Balance = styled.Text`
+  margin-top: 5px;
+  font-size: 30px;
+  color: #fff;
+`;
