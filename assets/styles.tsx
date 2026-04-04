@@ -1,4 +1,3 @@
-import { SafeAreaView } from 'react-native-safe-area-context';
 import styled from 'styled-components/native';
 
 export const Background = styled.View`
@@ -60,17 +59,20 @@ export const LoadingIconLarge = styled.View`
   align-items: center;
 `;
 
-export const BackgroundApp = styled(SafeAreaView)`
+export const BackgroundApp = styled.SafeAreaView`
   flex: 1;
   background-color: #f0f4ff;
 `;
 
-export const ContainerHeader = styled(SafeAreaView)`
+export const ContainerHeader = styled.SafeAreaView`
   flex-direction: row;
   align-items: center;
+  justify-content: flex-start;
+  margin-top: 30px;
+  margin-left: 15px;
+  margin-bottom: 15px;
   width: 100%;
-  padding: 0;
-  margin-left: 8px;
+  max-height: 60px;
 `;
 
 export const TitleHeader = styled.Text`
