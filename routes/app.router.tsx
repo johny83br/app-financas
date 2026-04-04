@@ -1,6 +1,8 @@
 import Home from '@/app/Home';
+import New from '@/app/New';
 import { createDrawerNavigator } from '@react-navigation/drawer';
 import React from 'react';
+
 
 const AppDrawer = createDrawerNavigator();
 
@@ -29,6 +31,7 @@ export default function AppRoutes() {
       }}
     >
       <AppDrawer.Screen name="Home" component={Home} />
+      <AppDrawer.Screen name="Registrar" component={New} />
     </AppDrawer.Navigator>
   );
 }
