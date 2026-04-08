@@ -1,5 +1,6 @@
 import { Balance, ContainerBalanceItem, LabelBalanceItem } from '@/assets/styles';
 import React, { useMemo } from 'react';
+import { FormattedNumber, IntlProvider } from 'react-intl';
 
 export default function BalanceItem({ data }: { data: { tag: string, saldo: number } }) {
 
@@ -28,7 +29,11 @@ export default function BalanceItem({ data }: { data: { tag: string, saldo: numb
   return (
     <ContainerBalanceItem bg={labelName.color}>
       <LabelBalanceItem>{labelName.label}</LabelBalanceItem>
-      <Balance>R$ {data.saldo.toFixed(2).replace('.', ',')}</Balance>
+      <IntlProvider locale="pt-br" defaultLocale="pt-br">
+        <Balance>
+          <FormattedNumber value={data.saldo} style="currency" currency="BRL" />
+        </Balance>
+      </IntlProvider>
     </ContainerBalanceItem>
   );
 }

@@ -147,3 +147,64 @@ export const RegisterLabel = styled.Text`
   margin-left: 8px;
   font-size: 17px;
 `;
+
+export const Area = styled.View`
+  background-color: #FFFFFF;
+  border-top-left-radius: 15px;
+  border-top-right-radius: 15px;
+  flex-direction: row;
+  padding-left: 14px;
+  padding-right: 14px;
+  padding-top: 14px;
+  align-items: middle;
+  margin-top: 25px;
+`;
+
+export const Title = styled.Text`
+  margin-left: 4px;
+  color: #121212;
+  margin-bottom: 14px;
+  font-weight: bold;
+  font-size: 23px;
+`;
+
+export const List = styled.FlatList`
+  flex: 1;
+  background-color: #FFFFFF;
+`;
+
+export const ContainerHistory = styled.View`
+  background-color: #F0F3FF;
+  border-radius: 4px;
+  margin-left: 10px;
+  margin-right: 10px;
+  margin-bottom: 14px;
+  padding: 14px;
+`;
+
+export const Tipo = styled.View`
+  flex-direction: row;
+
+`;
+
+export const TipoText = styled.Text`
+  color: #FFFFFF;
+  font-size: 16px;
+  font-style: italic;
+`;
+
+export const IconView = styled.View`
+  flex-direction: row;
+  background-color: #${props => props.bg};
+  padding-bottom: 4px;
+  padding-top: 4px;
+  padding-left: 8px;
+  padding-right: 8px;
+  border-radius: 4px;
+  margin-bottom: 4px;
+`;
+
+export const ValorText = styled.Text`
+  color: #121212;
+  font-size: 22px;
+`;
