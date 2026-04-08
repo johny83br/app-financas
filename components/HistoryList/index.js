@@ -2,8 +2,9 @@ import { ContainerHistory, IconView, Tipo, TipoText, ValorText } from '@/assets/
 import Icon from '@expo/vector-icons/Feather';
 import React, { useMemo } from 'react';
 import { FormattedNumber, IntlProvider } from 'react-intl';
+import { Alert, TouchableWithoutFeedback } from 'react-native';
 
-export default function HistoryList( { data } ) {
+export default function HistoryList( { data, deleteItem } ) {
 
   const labelName = useMemo(() => {
     switch (data.type) {
@@ -23,20 +24,39 @@ export default function HistoryList( { data } ) {
 
   }, [data.type]);
 
-  return(
-    <ContainerHistory>
-      <Tipo>
-        <IconView bg={labelName.color}>
-          <Icon name={labelName.icon} size={20} color="#FFFFFF" />
-          <TipoText>{data.type.replace(/^./, data.type[0].toUpperCase())}</TipoText>
-        </IconView>
-      </Tipo>
+  function handleDeleteItem() {
+    Alert.alert(
+      'Atenção',
+      'Você tem certeza que deseja deletar esse registro?',
+      [
+        {
+          text: 'Cancelar',
+          style: 'cancel'
+        },
+        {
+          text: 'Continuar',
+          onPress: () => deleteItem(data.id)
+        }
+      ]
+    );
+  }
 
-      <IntlProvider locale="pt-br" defaultLocale="pt-br">
-        <ValorText>
-          <FormattedNumber value={Math.round(data.value * 100) / 100} style="currency" currency="BRL" />
-        </ValorText>
-      </IntlProvider>
-    </ContainerHistory>
+  return(
+    <TouchableWithoutFeedback onLongPress={handleDeleteItem}>
+      <ContainerHistory>
+        <Tipo>
+          <IconView bg={labelName.color}>
+            <Icon name={labelName.icon} size={20} color="#FFFFFF" />
+            <TipoText>{data.type.replace(/^./, data.type[0].toUpperCase())}</TipoText>
+          </IconView>
+        </Tipo>
+
+        <IntlProvider locale="pt-br" defaultLocale="pt-br">
+          <ValorText>
+            <FormattedNumber value={Math.round(data.value * 100) / 100} style="currency" currency="BRL" />
+          </ValorText>
+        </IntlProvider>
+      </ContainerHistory>
+    </TouchableWithoutFeedback>
   );
 }

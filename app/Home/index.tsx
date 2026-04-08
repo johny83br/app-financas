@@ -48,6 +48,20 @@ export default function Home() {
 
   }, [setListBalance, dateMovements, isFocused]);
 
+  async function handleDelete(id: string) {
+    try {
+      api.delete('/receives/delete', {
+        'params': {
+          'item_id': id
+        }
+      })
+
+      setDateMovements(new Date());
+    } catch (error) {
+      console.error(error);
+    }
+  }
+
   return (
     <BackgroundApp>
       <Header title="Minhas movimentações" />
@@ -60,7 +74,7 @@ export default function Home() {
         <Title>Últimas movimentações</Title>
       </Area>
 
-      <List data={ movements } keyExtractor={item => item.id} renderItem={ ({item}) => <HistoryList data={item} />} showsVerticalScrollIndicator={false} contentContainerStyle={{paddingBottom: 20}} />
+      <List data={ movements } keyExtractor={item => item.id} renderItem={ ({item}) => <HistoryList data={item} deleteItem={handleDelete} />} showsVerticalScrollIndicator={false} contentContainerStyle={{paddingBottom: 20}} />
     </BackgroundApp>
   );
 }
