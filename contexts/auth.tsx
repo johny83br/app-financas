@@ -33,7 +33,7 @@ function AuthProvider({ children }: { children: React.ReactNode }) {
       const token = await AsyncStorage.getItem('@token');
 
       if (token) {
-        api.defaults.headers.common.Authorization = `Bearer ${token}`;
+        api.defaults.headers.common['Authorization'] = `Bearer ${token}`;
 
         try {
           const response = await api.get('/me');
@@ -83,6 +83,8 @@ function AuthProvider({ children }: { children: React.ReactNode }) {
       const { id, name, token } = response.data;
 
       await AsyncStorage.setItem('@token', token);
+
+      api.defaults.headers.common['Authorization'] = `Bearer ${token}`;
 
       setUser({ id, name, email });
       setLoadingAuth(false);
