@@ -1,5 +1,6 @@
 import Home from '@/app/Home';
 import New from '@/app/New';
+import Profile from '@/app/Profile';
 import { createDrawerNavigator } from '@react-navigation/drawer';
 import React from 'react';
 
@@ -27,11 +28,13 @@ export default function AppRoutes() {
 
         drawerItemStyle: {
           borderRadius: 5,
+          marginBottom: 10
         },
       }}
     >
       <AppDrawer.Screen name="Home" component={Home} />
       <AppDrawer.Screen name="Registrar" component={New} />
+      <AppDrawer.Screen name="Meu Perfil" component={Profile} />
     </AppDrawer.Navigator>
   );
 }
